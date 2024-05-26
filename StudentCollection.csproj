@@ -43,8 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Biodata.cs" />
+    <Compile Include="CourseRegistration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Result.cs" />
     <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>

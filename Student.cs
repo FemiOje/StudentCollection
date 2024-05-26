@@ -8,34 +8,50 @@ namespace StudentCollection
 {
     class Student
     {
-        /// <summary>
-        /// Student name
-        /// </summary>
+        public int StudentID { get; set; }
         public string Name { get; set; }
+        public Biodata Biodata { get; set; }
+        public List<Result> Results { get; set; }
+        public List<CourseRegistration> CourseRegistrations { get; set; }
+
 
         /// <summary>
-        /// Student's matric number
+        /// Initializes a student object with the student's ID, name and biodata.
         /// </summary>
-        public long MatriculationNumber { get; set; }
-
-        /// <summary>
-        /// Current semester the student is on
-        /// </summary>
-        public int Semester { get; set; }
-
-        /// <summary>
-        /// Dictionary containing the student's score for each course offered
-        /// </summary>
-        public Dictionary<string, double> Scores { get; }
-
-        public Student(string name, long matriculationNumber, int semester)
+        /// <param name="studentID">Student ID</param>
+        /// <param name="name">Student's name</param>
+        /// <param name="biodata">Student's biodata</param>
+        public Student(int studentID, string name, Biodata biodata)
         {
-            this.Name = name;
-            this.MatriculationNumber = matriculationNumber;
-            this.Semester = semester;
-            this.Scores = new Dictionary<string, double>();
+            StudentID = studentID;
+            Name = name;
+            Biodata = biodata;
+            Results = new List<Result>();
+        }
+
+        /// <summary>
+        /// Add a result to the list of results
+        /// </summary>
+        /// <param name="result">A result object</param>
+        public void AddResult(Result result)
+        {
+            Results.Add(result);
         }
 
 
+        /// <summary>
+        /// Log student's ID, name, biodata and all results
+        /// </summary>
+        public void DisplayStudentInfo()
+        {
+            Console.WriteLine($"Student ID: {StudentID}");
+            Console.WriteLine($"Name: {Name}");
+            // Biodata.DisplayBiodata();
+            Console.WriteLine("Results:");
+            // foreach (var result in Results)
+            // {
+            //     result.DisplayResult();
+            // }
+        }
     }
 }
